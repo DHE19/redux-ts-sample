@@ -5,6 +5,7 @@ import './index.css'
 import {Store, applyMiddleware, createStore} from 'redux'
 import reducer from './store/reducer'
 import thunk from 'redux-thunk'
+import { Provider } from 'react-redux'
 
 const store:Store<ArticleState, ArticleAction> & {
   dispatch: DispatchType
@@ -16,6 +17,9 @@ const store:Store<ArticleState, ArticleAction> & {
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 )

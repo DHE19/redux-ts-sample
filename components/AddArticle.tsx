@@ -23,16 +23,17 @@ const AddArticle:React.FC<Props> = ({saveArticle}) => {
         saveArticle(article);
     }
 
+    const styleInput = {marginInline:'15px', padding:'13.5px 20px', borderRadius:'5px', outline:'none', border:'none'}
 
     return (
         <form onSubmit={addNewArticle} className='Add-article'>
             
-            <input 
+            <input  style={styleInput}
             type="text" id='title' 
             placeholder='Title' 
             onChange={handleArticleData} />
             
-            <input 
+            <input  style={styleInput}
             type="text"
             id='body'
             placeholder='Description'
